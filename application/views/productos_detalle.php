@@ -1,4 +1,4 @@
-<h1><?php echo ($producto->nombre); ?></h1>
+<h1><?php echo htmlspecialchars($producto->nombre); ?></h1>
 
 <ul>
     <li><strong>Código:</strong> <?php echo $producto->id; ?></li>
