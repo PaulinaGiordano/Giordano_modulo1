@@ -13,12 +13,12 @@ class Productos extends CI_Controller{
         $this->load->view('productos_listado', $datos);
     }
 
-    public function ver($id){
-        if (!$datos ['productos']){
-            show_404();
-            return;
-        }
-        $this->load->view('productos_detalle',$datos);
-        $datos['producto'] = $this->Productos_model->obtenerPorId($id);
-    }
+	public function ver($id){
+   		$datos['producto'] = $this->Productos_model->obtenerPorId($id);
+    	if (!$datos['producto']){
+        	show_404();
+        	return;
+    	}
+    	$this->load->view('productos_detalle', $datos);
+}
 }
