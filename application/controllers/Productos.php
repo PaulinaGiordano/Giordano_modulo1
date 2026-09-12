@@ -14,7 +14,11 @@ class Productos extends CI_Controller{
     }
 
     public function ver($id){
-        $datos['producto'] = $this->Productos_model->obtenerPorId($id);
+        if (!$datos ['productos']){
+            show_404();
+            return;
+        }
         $this->load->view('productos_detalle',$datos);
+        $datos['producto'] = $this->Productos_model->obtenerPorId($id);
     }
 }
