@@ -6,8 +6,8 @@
     <?php foreach ($productos as $producto): ?>
         <tr>
             <td><?php echo $producto->id; ?></td>
-            <td><?php echo $producto->nombre; ?></td>
-            <td>$<?php echo $producto->precio; ?></td>
+   			<td><?php echo htmlspecialchars($producto->nombre); ?></td>            
+			<td>$<?php echo $producto->precio; ?></td>
             <td><?php echo $producto->stock; ?></td>
             <td><a href="<?php echo base_url('index.php/productos/ver/' . $producto->id); ?>">Ver</a></td>
         </tr>
